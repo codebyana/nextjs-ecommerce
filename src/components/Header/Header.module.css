@@ -1,0 +1,152 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--background);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.navLeft {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+}
+
+.navRight {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menuBtn {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.menuText {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+.searchBtn, .cartBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.icon {
+  display: none;
+}
+
+.cartBadge {
+  display: none;
+  background: var(--accent);
+  color: white;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+.cartBtn {
+  position: relative;
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+}
+
+.userName {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+.logo {
+  font-family: var(--font-playfair);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .navLeft, .desktopAuth {
+    display: none;
+  }
+  
+  .menuBtn {
+    display: flex;
+  }
+
+  .menuText {
+    display: none;
+  }
+  
+  .searchText, .cartText {
+    display: none;
+  }
+
+  .icon {
+    display: block;
+  }
+
+  .cartBadge {
+    display: flex;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+    flex: 2;
+  }
+  
+  .navRight {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
+}

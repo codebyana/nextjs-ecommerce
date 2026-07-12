@@ -1,0 +1,141 @@
+.main {
+  padding-top: var(--spacing-md);
+  padding-bottom: 12rem;
+}
+
+.pageHeader {
+  text-align: left;
+  margin-bottom: 4rem;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.topBreadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.topBreadcrumb span {
+  font-size: 0.65rem;
+  color: var(--muted);
+}
+
+.breadcrumbLink:hover span {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 0.25rem;
+  font-weight: 300;
+}
+
+.formWrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.forgotLink {
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+.input {
+  padding: 1rem;
+  border: 1px solid var(--surface);
+  font-family: var(--font-inter);
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.submitBtn {
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+}
+
+.footerLinks {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-top: 1px solid var(--surface);
+  padding-top: 1.5rem;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 1.5rem;
+  }
+}
+
+.errorMessage {
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #b91c1c;
+  padding: 1rem;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+}

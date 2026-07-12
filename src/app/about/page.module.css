@@ -1,0 +1,153 @@
+.main {
+  min-height: 100vh;
+  background-color: #fafafa;
+}
+
+.hero {
+  padding: 6rem 0 4rem;
+  text-align: center;
+  background-color: #111111;
+  color: white;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #a1a1aa;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contentSection {
+  padding: 6rem 0;
+  background: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.textContent h2 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #111111;
+}
+
+.textContent p {
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.imagePlaceholder {
+  width: 100%;
+}
+
+.imageBox {
+  aspect-ratio: 4/5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f3f4f6;
+}
+
+.imageText {
+  display: none;
+}
+
+.valuesSection {
+  padding: 6rem 0;
+  background-color: #f9fafb;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: #111111;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.valueCard {
+  background: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+}
+
+.valueCard h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.valueCard p {
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.mapSection {
+  padding: 4rem 0 6rem;
+  background: white;
+}
+
+.mapContainer {
+  width: 100%;
+  position: relative;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(17,24,39,0.06);
+  margin-top: 2rem;
+}
+
+.mapContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}
