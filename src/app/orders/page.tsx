@@ -174,27 +174,35 @@ export default function OrdersPage() {
                           <span className={styles.totalPrice}>{`${order.totalAmount.toLocaleString('id-ID')} IDR`}</span>
                         </div>
                         
-                        {order.status === 'SHIPPED' && (
-                          <div style={{ marginTop: '1.5rem', textAlign: 'right' }}>
+                        <div className={styles.orderActions}>
+                          {order.status !== 'CANCELLED' && order.status !== 'PENDING' && (
+                            <Link 
+                              href={`/orders/${order.id}/print`} 
+                              target="_blank" 
+                              className={styles.printBtn}
+                            >
+                              Cetak Kwitansi
+                            </Link>
+                          )}
+
+                          {order.status === 'SHIPPED' && (
                             <button 
                               onClick={() => handleReceiveOrder(order.id)}
                               className={styles.receiveBtn}
                             >
                               Pesanan Diterima
                             </button>
-                          </div>
-                        )}
+                          )}
 
-                        {order.status === 'DELIVERED' && !order.testimonial && reviewingOrderId !== order.id && (
-                          <div style={{ marginTop: '1.5rem', textAlign: 'right' }}>
+                          {order.status === 'DELIVERED' && !order.testimonial && reviewingOrderId !== order.id && (
                             <button 
                               onClick={() => setReviewingOrderId(order.id)}
                               className={styles.reviewBtn}
                             >
                               Tulis Testimoni
                             </button>
-                          </div>
-                        )}
+                          )}
+                        </div>
 
                         {reviewingOrderId === order.id && (
                           <div className={styles.reviewForm}>

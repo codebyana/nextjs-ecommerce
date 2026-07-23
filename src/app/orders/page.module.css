@@ -269,6 +269,32 @@
   background: #f9f9f9;
 }
 
+.orderActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.printBtn {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+  color: #111;
+  border: 1px solid #ddd;
+  text-decoration: none;
+}
+
+.printBtn:hover {
+  background: #f3f4f6;
+  border-color: #111;
+}
+
 .reviewForm {
   margin-top: 1.5rem;
   background: #f9f9f9;
