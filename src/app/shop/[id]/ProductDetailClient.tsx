@@ -36,7 +36,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
       setShowSizeError(true);
       return;
     }
-    
+
     // Increment interest count in database
     await incrementProductInterest(product.id);
 
@@ -65,10 +65,10 @@ export default function ProductDetailClient({ product }: { product: any }) {
       <div className={styles.gallery}>
         {images.map((img: string, idx: number) => (
           <div key={idx} className={styles.imageWrapper}>
-            <Image 
-              src={img} 
-              alt={product.title} 
-              fill 
+            <Image
+              src={img}
+              alt={product.title}
+              fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className={styles.image}
               priority={idx === 0}
@@ -120,7 +120,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
             </span>
           </div>
 
-          <button 
+          <button
             className={styles.addBtn}
             onClick={handleAddToCart}
             disabled={isOutOfStock}
@@ -131,7 +131,7 @@ export default function ProductDetailClient({ product }: { product: any }) {
 
           <div className={styles.accordions}>
             <div className={styles.accordionItem}>
-              <button 
+              <button
                 className={styles.accordionHeader}
                 onClick={() => toggleAccordion('description')}
               >
