@@ -11,6 +11,11 @@ if (process.env.NODE_ENV !== 'production' && globalForPrisma.prisma) {
 export const prisma =
   globalForPrisma.prisma ||
   new PrismaClient({
+    datasources: {
+      db: {
+        url: process.env.DATABASE_URL || "mysql://mbstarex_ecom1:kSAkjasnfasd!10@127.0.0.1:3306/mbstarex_ecom",
+      },
+    },
     log: ['query'],
   });
 
