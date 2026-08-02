@@ -44,3 +44,6 @@ next-env.d.ts
 src/test-key.ts
 test_prisma.ts
 
+# archives
+*.zip
+

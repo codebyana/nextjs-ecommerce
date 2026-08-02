@@ -29,8 +29,8 @@ export async function loginAction(email: string, password: string) {
         role: user.role,
       },
     };
-  } catch (error) {
+  } catch (error: any) {
     console.error('Login error:', error);
-    return { success: false, message: 'An error occurred during login.' };
+    return { success: false, message: 'An error occurred: ' + (error.message || String(error)) };
   }
 }

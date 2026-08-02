@@ -383,12 +383,6 @@
     size: A4;
     margin: 15mm;
   }
-  
-  body {
-    background-color: #fff !important;
-    color: #000 !important;
-  }
-
   .invoiceWrapper {
     background-color: #fff !important;
     padding: 0 !important;
