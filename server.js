@@ -1,6 +1,10 @@
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
+// Disable worker process spawning to comply with cPanel nproc limits
+process.env.NEXT_PRIVATE_WORKERS = '0';
+process.env.UV_THREADPOOL_SIZE = '2';
+
 const { createServer } = require('http');
 const { parse } = require('url');
 const next = require('next');
