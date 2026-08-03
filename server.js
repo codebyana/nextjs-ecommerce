@@ -14,22 +14,24 @@ const app = next({ dev, dir: __dirname });
 const handle = app.getRequestHandler();
 const port = process.env.PORT || 3000;
 
+// Create HTTP server synchronously so LiteSpeed/Passenger binds to it immediately
+const server = createServer((req, res) => {
+  try {
+    const parsedUrl = parse(req.url, true);
+    handle(req, res, parsedUrl);
+  } catch (err) {
+    console.error('Error handling request:', req.url, err);
+    res.statusCode = 500;
+    res.end('Internal Server Error');
+  }
+});
+
 app.prepare().then(() => {
-  createServer(async (req, res) => {
-    try {
-      const parsedUrl = parse(req.url, true);
-      await handle(req, res, parsedUrl);
-    } catch (err) {
-      console.error('Error occurred handling', req.url, err);
-      res.statusCode = 500;
-      res.end('Internal Server Error');
-    }
-  })
-  .once('error', (err) => {
-    console.error(err);
-    process.exit(1);
-  })
-  .listen(port, () => {
+  server.listen(port, (err) => {
+    if (err) throw err;
     console.log(`> Ready on port ${port}`);
   });
+}).catch((err) => {
+  console.error('App prepare error:', err);
+  process.exit(1);
 });
